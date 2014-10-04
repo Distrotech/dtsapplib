@@ -30,6 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <linux/if_packet.h>
 #include <linux/if_tun.h>
 #include <linux/if_arp.h>
+#include <linux/if_link.h>
 #include <linux/sockios.h>
 #include <linux/if.h>
 #include <ifaddrs.h>
