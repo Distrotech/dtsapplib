@@ -3,7 +3,7 @@ AM_CFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS)
 EXTRA_DIST = include
 if LINUXSYSTEM
   NLSUBDIR = libnetlink
-  SYSSOURCE = unixsock.c nf_queue.c nf_ctrack.c radius.c interface.c iputil.c rfc6296.c
+  SYSSOURCE = unixsock.c nf_queue.c nf_ctrack.c radius.c rfc6296.c
   SYSLIBS = ./libnetlink/libnetlink.la
 endif
 
@@ -20,7 +20,7 @@ includeinstdir = $(includedir)/dtsapplib
 includeinst_DATA = include/dtsapp.h
 
 libdtsapp_la_SOURCES = refobj.c lookup3.c thread.c main.c util.c socket.c sslutil.c config.c \
-                       zlib.c libxml2.c libxslt.c openldap.c curl.c $(SYSSOURCE) fileutil.c
+                       zlib.c libxml2.c libxslt.c openldap.c curl.c $(SYSSOURCE) fileutil.c iputil.c interface.c 
 
 libdtsapp_la_LIBADD = $(SYSLIBS) $(XSLT_LIBS) $(XML_LIBS) $(LDAP_LIBS) $(LIBS) $(LIBCURL)
 libdtsapp_la_CFLAGS = $(AM_CFLAGS) -I./libnetlink/include $(DEVELOPER_CFLAGS) $(XSLT_CFLAGS) $(XML_CFLAGS) $(LIBCURL_CPPFLAGS)
